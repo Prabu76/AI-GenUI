@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT-like Chat Application</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Left Side Menu -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 bg-light">
+                <!-- Logo with Black Background -->
+                <div class="logo">
+                    <img src="https://ibleducation.com/wp-content/themes/ibl-web-ibleducation-theme/img/logo_v2.png" alt="Logo">
+                </div>
+                <!-- Menu Toggle Button for Mobile -->
+                <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+                <!-- Menu Items -->
+                <ul class="nav flex-column menu-visible" id="menu-items">
+                    <li class="nav-item menu-item">
+                        <i class="fas fa-paper-plane"></i>
+                        <a class="nav-link active" href="#">Reset chat</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <i class="fas fa-chart-line"></i>
+                        <a class="nav-link" href="#">Bard Activity</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <i class="fas fa-question-circle"></i>
+                        <a class="nav-link active" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <a class="nav-link" href="#">Update</a>
+                    </li>
+                    <li class="nav-item menu-item">
+                        <i class="fas fa-hands-helping"></i>
+                        <a class="nav-link" href="#">Help</a>
+                    </li>
+                   
+                    <!-- Add more menu items as needed -->
+                </ul>
+            </div>
+            
+            <!-- Right Side Chat Interface -->
+            <!-- Right Side Chat Interface -->
+<div class="col-md-9 col-lg-10 right-side">
+    <div class="container-fluid chat-container-container">
+        <div class="row menu-row ">
+            <div class="d-flex justify-content-end mb-3 w-100 ">
+                <a href="#" class="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+                    <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+                  </svg></a>
+                <div class="rounded-circle user-image chatgpt-icon">
+                    <a href="#" class="text-decoration-none">  <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" alt="User Image" class="img-fluid"></a>
+                </div>
+            </div>
+        </div>
+        <div class="chat-container">
+            <!-- Chat messages will go here -->
+            <div class="chat-content-area" id="chat-content-area">
+
+                <!-- START USER CHAT -->
+                <div class="row user-chat-box">
+                  <div class=" chat-icon">
+                    <div >
+                    <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" /></div>
+                  </div>
+                  <div class="chat-txt">who are you?</div>
+                </div>
+            
+                <!-- START GPT CHAT -->
+                <div class="row gpt-chat-box">
+                  <div >
+                    <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="images/chatgpt-icon.png" />
+                  </div>
+                  <div class="chat-txt">
+                    I am ChatGPT, a large language model developed by OpenAI. I am
+                    an artificial intelligence designed to process and generate
+                    human-like text based on the input provided to me. I am here to
+                    assist you with any questions or tasks you may have to the best
+                    of my abilities!
+                    <br> 
+                    <div class="mt-3"><strong>Learn more:</strong>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">1. smallcase.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">2. cnn.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">3. cnn.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">4. marketbeat.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button " onclick ="showLoadingMessage();">+2 more</button>
+                    </div>
+                    <br>
+                    <div class="mt-3">
+                        <!-- Button with a thumbs-up icon -->
+            <button class="btn btn-sm btn-outline-primary mr-2">
+                <i class="fas fa-thumbs-up text-blue"></i>
+            </button>
+            
+            <!-- Button with a thumbs-down icon -->
+            <button class="btn btn-sm btn-outline-danger mr-2">
+                <i class="fas fa-thumbs-down text-blue"></i>
+            </button>
+            
+            <!-- Button with an upload icon -->
+            <button class="btn btn-sm btn-outline-success mr-2">
+                <i class="fas fa-upload text-blue"></i>
+            </button>
+
+            <!-- Button with a Google logo and label 'Google It' -->
+            <a href="https://www.google.com" target="_blank" class="btn btn-sm btn-outline-secondary">
+                <img src="images/google-logo.png" alt="Google Logo" class="google-logo" style="width: 25px; height: 25px;"/>
+                Google It
+            </a>
+                    </div>
+                  </div>
+                </div>
+            
+               
+            
+                <!-- START USER CHAT -->
+                <div class="row user-chat-box">
+                  <div class="chat-icon">
+                    <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" />
+                  </div>
+                  <div class="chat-txt">who are you?</div>
+                </div>
+            
+                <!-- START GPT CHAT -->
+                <div class="row gpt-chat-box">
+                  <div class="chat-icon">
+                    <img class="rounded-circle user-image chatgpt-icon" src="images/chatgpt-icon.png" />
+                  </div>
+                  <div class="chat-txt">
+                    I am ChatGPT, a large language model developed by OpenAI. I am
+                    an artificial intelligence designed to process and generate
+                    human-like text based on the input provided to me. I am here to
+                    assist you with any questions or tasks you may have to the best
+                    of my abilities!
+                  </div>
+                </div>
+                <div id="new-messages"></div>
+                <div class="loading-message">
+                    <span></span>
+                    <div class="loading-dot"></div>
+                </div>
+              </div>
+              <div class="row user-input-row">
+                <div class="col-2 d-flex justify-content-start">    <button class="NewTopic-button">New topic</button></div>
+                <div class="col-10 position-relative">
+                    <div class=" row input-group">
+                        <div class="col-10">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text microphone-icon">
+                                    <i class="fas fa-microphone"></i>
+                                </span>
+                            </span>
+                        <input type="text" id="user-input-field" class="user-input-field" placeholder="Type your message...">
+                       
+                    </div>
+                    <div class="col-2 d-flex justify-content-start">
+                        <button class="send-button-image" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                         </button>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Font Awesome JS for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // JavaScript function to send user messages
+    
+         // JavaScript function to toggle the left-side menu on mobile
+         function toggleMenu() {
+            const menuItems = document.getElementById("menu-items");
+            menuItems.classList.toggle("menu-visible");
+        }
+        function sendMessage() {
+    const userInput = document.getElementById("user-input-field").value;
+    const newMessagesContainer = document.getElementById("new-messages");
+
+    // Create a new chat message element
+    const userMessage = document.createElement("div");
+    userMessage.classList.add("chat-message", "user-message");
+
+    userMessage.innerHTML = `<div class="row user-chat-box">
+                  <div class="chat-icon">
+                    <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" />
+                  </div>
+                  <div class="chat-txt">${userInput}</div>
+                </div>`;
+    
+    // Append the message element to the new-messages container
+    newMessagesContainer.appendChild(userMessage);
+
+    // Clear the user input field
+    document.getElementById("user-input-field").value = "";
+
+    // Simulate a bot response with a delay (you can replace this with your actual logic)
+    setTimeout(function () {
+        showLoadingMessage();
+        // Create a bot message element
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("chat-message", "bot-message", "animate__fadeIn"); // Add CSS classes for animations
+        botMessage.innerHTML = ` <div class="row gpt-chat-box">
+                  <div >
+                    <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="images/chatgpt-icon.png" />
+                  </div>
+                  <div class="chat-txt">
+                   <p> I am ChatGPT, a large language model developed by OpenAI. I am
+                    an artificial intelligence designed to process and generate
+                    human-like text based on the input provided to me. I am here to
+                    assist you with any questions or tasks you may have to the best
+                    of my abilities!</p>
+                    
+                    Chat GPT can be used in the classroom to help students develop skills like writing, reading comprehension, and vocabulary building. Teachers can use Chat GPT to help students develop these skills.
+                    <br> 
+                    <br> 
+                    <div class="mt-3"><strong>Learn more:</strong>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">1. smallcase.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">2. cnn.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">3. cnn.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">4. marketbeat.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">+2 more</button>
+                    </div>
+                    <br>
+                    <div class="mt-3">
+                        <!-- Button with a thumbs-up icon -->
+            <button class="btn btn-sm btn-outline-primary mr-2">
+                <i class="fas fa-thumbs-up text-blue"></i>
+            </button>
+            
+            <!-- Button with a thumbs-down icon -->
+            <button class="btn btn-sm btn-outline-danger mr-2">
+                <i class="fas fa-thumbs-down text-blue"></i>
+            </button>
+            
+            <!-- Button with an upload icon -->
+            <button class="btn btn-sm btn-outline-success mr-2">
+                <i class="fas fa-upload text-blue"></i>
+            </button>
+
+            <!-- Button with a Google logo and label 'Google It' -->
+            <a href="https://www.google.com" target="_blank" class="btn btn-sm btn-outline-secondary">
+                <img src="images/google-logo.png" alt="Google Logo" class="google-logo" style="width: 25px; height: 25px;"/>
+                Google It
+            </a>
+                    </div>
+                  </div>
+                </div>`;
+        
+        // Append the bot message element to the new-messages container
+        newMessagesContainer.appendChild(botMessage);
+
+        // Scroll to the bottom of the chat-content-area with smooth animation
+        document.getElementById("chat-content-area").scrollTo({
+            top: newMessagesContainer.scrollHeight,
+            behavior: "smooth"
+        });
+        hideLoadingMessage(); }, 1000); // Delay for simulating the bot response
+}
+// Function to show the loading message
+function showLoadingMessage() {
+    const loadingMessage = document.querySelector(".loading-message");
+    loadingMessage.style.display = "block";
+}
+
+// Function to hide the loading message
+function hideLoadingMessage() {
+    const loadingMessage = document.querySelector(".loading-message");
+    loadingMessage.style.display = "none";
+}
+    </script>
+</body>
+</html>
