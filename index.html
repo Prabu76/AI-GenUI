@@ -1,296 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT-like Chat Application</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Include Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ibleducation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+ 
+
 </head>
+
 <body>
-    <!-- Left Side Menu -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-lg-2 bg-light">
-                <!-- Logo with Black Background -->
-                <div class="logo">
-                    <img src="https://ibleducation.com/wp-content/themes/ibl-web-ibleducation-theme/img/logo_v2.png" alt="Logo">
-                </div>
-                <!-- Menu Toggle Button for Mobile -->
-                <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
-                <!-- Menu Items -->
-                <ul class="nav flex-column menu-visible" id="menu-items">
-                    <li class="nav-item menu-item">
-                        <i class="fas fa-paper-plane"></i>
-                        <a class="nav-link active" href="#">Reset chat</a>
-                    </li>
-                    <li class="nav-item menu-item">
-                        <i class="fas fa-chart-line"></i>
-                        <a class="nav-link" href="#">Bard Activity</a>
-                    </li>
-                    <li class="nav-item menu-item">
-                        <i class="fas fa-question-circle"></i>
-                        <a class="nav-link active" href="#">FAQ</a>
-                    </li>
-                    <li class="nav-item menu-item">
-                        <i class="fas fa-sync-alt"></i>
-                        <a class="nav-link" href="#">Update</a>
-                    </li>
-                    <li class="nav-item menu-item">
-                        <i class="fas fa-hands-helping"></i>
-                        <a class="nav-link" href="#">Help</a>
-                    </li>
-                   
-                    <!-- Add more menu items as needed -->
-                </ul>
-            </div>
-            
-            <!-- Right Side Chat Interface -->
-            <!-- Right Side Chat Interface -->
-<div class="col-md-9 col-lg-10 right-side">
-    <div class="container-fluid chat-container-container">
-        <div class="row menu-row ">
-            <div class="d-flex justify-content-end mb-3 w-100 ">
-                <a href="#" class="text-decoration-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
-                    <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
-                  </svg></a>
-                <div class="rounded-circle user-image chatgpt-icon">
-                    <a href="#" class="text-decoration-none">  <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" alt="User Image" class="img-fluid"></a>
-                </div>
-            </div>
-        </div>
-        <div class="chat-container">
-            <!-- Chat messages will go here -->
-            <div class="chat-content-area" id="chat-content-area">
 
-                <!-- START USER CHAT -->
-                <div class="row user-chat-box">
-                  <div class=" chat-icon">
-                    <div >
-                    <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" /></div>
-                  </div>
-                  <div class="chat-txt">who are you?</div>
-                </div>
-            
-                <!-- START GPT CHAT -->
-                <div class="row gpt-chat-box">
-                  <div >
-                    <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="images/chatgpt-icon.png" />
-                  </div>
-                  <div class="chat-txt">
-                    I am ChatGPT, a large language model developed by OpenAI. I am
-                    an artificial intelligence designed to process and generate
-                    human-like text based on the input provided to me. I am here to
-                    assist you with any questions or tasks you may have to the best
-                    of my abilities!
-                    <br> 
-                    <div class="mt-3"><strong>Learn more:</strong>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">1. smallcase.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">2. cnn.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">3. cnn.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">4. marketbeat.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button " onclick ="showLoadingMessage();">+2 more</button>
-                    </div>
-                    <br>
-                    <div class="mt-3">
-                        <!-- Button with a thumbs-up icon -->
-            <button class="btn btn-sm btn-outline-primary mr-2">
-                <i class="fas fa-thumbs-up text-blue"></i>
-            </button>
-            
-            <!-- Button with a thumbs-down icon -->
-            <button class="btn btn-sm btn-outline-danger mr-2">
-                <i class="fas fa-thumbs-down text-blue"></i>
-            </button>
-            
-            <!-- Button with an upload icon -->
-            <button class="btn btn-sm btn-outline-success mr-2">
-                <i class="fas fa-upload text-blue"></i>
-            </button>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-            <!-- Button with a Google logo and label 'Google It' -->
-            <a href="https://www.google.com" target="_blank" class="btn btn-sm btn-outline-secondary">
-                <img src="images/google-logo.png" alt="Google Logo" class="google-logo" style="width: 25px; height: 25px;"/>
-                Google It
-            </a>
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="#" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block"></span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    <!-- End Logo -->
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-grid-3x3-gap"></i>
+          </a>
+          <!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+          </ul>
+          <!-- End Messages Dropdown Items -->
+        </li>
+        <!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+          </a>
+
+          <!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Alen Paul</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Profile Dropdown Items -->
+        </li>
+        <!-- End Profile Nav -->
+      </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+        <a class="nav-link collapsed" onclick="newChat();return false;" href="#">
+          <i class="bi bi-grid"></i>
+          <span>Reset chat</span>
+        </a>
+      </li>
+      <!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link " href="#">
+          <i class="bi bi-person"></i>
+          <span>Bard Activity</span>
+        </a>
+      </li>
+      <!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li>
+      <!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-envelope"></i>
+          <span>Update</span>
+        </a>
+      </li>
+      <!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+          <i class="bi bi-card-list"></i>
+          <span>Register</span>
+        </a>
+      </li>
+      <!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Help</span>
+        </a>
+      </li>
+      <!-- End Login Page Nav -->
+
+
+
+    </ul>
+
+  </aside>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="chat-container">
+      <!-- Chat messages will go here -->
+      <div class="chat-content-area" id="chat-content-area">
+        <!-- START USER CHAT -->
+
+
+
+        <div id="new-messages">
+          <!-- Default CHAT -->
+          <div>
+            <div class="row gpt-chat-box">
+              <div id="accordion" class="w-100"></div>
+              <div class="col-chat-left">
+                <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="assets/img/Ai-icon.gif" />
+              </div>
+              <div class="chat-txt col-md-11">
+                <br>
+                <h1>Hello again</h1>
+                <p>Tell me what’s on your mind, or pick a suggestion. I have limitations and won’t always get it right,
+                  but your feedback will help me improve.</p>
+                <div class="row">
+                  <div class="card " style="width:250px; margin: 10px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+
                     </div>
                   </div>
-                </div>
-            
-               
-            
-                <!-- START USER CHAT -->
-                <div class="row user-chat-box">
-                  <div class="chat-icon">
-                    <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" />
+                  <div class="card" style="width:250px; margin: 10px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                      <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                        <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                        <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="chat-txt">who are you?</div>
-                </div>
-            
-                <!-- START GPT CHAT -->
-                <div class="row gpt-chat-box">
-                  <div class="chat-icon">
-                    <img class="rounded-circle user-image chatgpt-icon" src="images/chatgpt-icon.png" />
+                  <div class="card" style="width:250px; margin: 10px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's content.</p>
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="chat-txt">
-                    I am ChatGPT, a large language model developed by OpenAI. I am
-                    an artificial intelligence designed to process and generate
-                    human-like text based on the input provided to me. I am here to
-                    assist you with any questions or tasks you may have to the best
-                    of my abilities!
-                  </div>
-                </div>
-                <div id="new-messages"></div>
-                <div class="loading-message">
-                    <span></span>
-                    <div class="loading-dot"></div>
                 </div>
               </div>
-              <div class="row user-input-row">
-                <div class="col-2 d-flex justify-content-start">    <button class="NewTopic-button">New topic</button></div>
-                <div class="col-10 position-relative">
-                    <div class=" row input-group">
-                        <div class="col-10">
-                            <span class="input-group-prepend">
-                                <span class="input-group-text microphone-icon">
-                                    <i class="fas fa-microphone"></i>
-                                </span>
-                            </span>
-                        <input type="text" id="user-input-field" class="user-input-field" placeholder="Type your message...">
-                       
-                    </div>
-                    <div class="col-2 d-flex justify-content-start">
-                        <button class="send-button-image" onclick="sendMessage()">
-                            <i class="fas fa-paper-plane"></i>
-                         </button>
-                    </div>
-                </div>
-                </div>
-                
+              <div class="alert alert-primary" role="alert">
+                Human reviewers may process your Bard conversations for quality purposes. Don't enter sensitive info.
+              </div>
             </div>
+          </div>
+          <!--End of default CHAT -->
+
+          <!-- START USER CHAT -->
         </div>
-        
-    </div>
-</div>
-
+        <div id="loading-message" class="chat-message bot-message animate__fadeIn" style="display: none;">
+          <div class="chat-icon col-chat-left">
+            <img class="rounded-circle user-image chatgpt-icon" src="assets/img/loading-icon.gif" />
+          </div>
+          <div class="chat-txt col-md-11">
+            Loading...
+          </div>
         </div>
+      </div>
+      <div class="row user-input-row">
+        <div class="col-12 position-relative p-1" style="height: 50px;">
+          <div class="input-group mb-3" style="margin-top: 10px;">
+            <div class="input-group">
+              <input type="text" class="form-control rounded-corners" id="user-input-field"
+                placeholder="Ask a question..." aria-label="Ask a question..." aria-describedby="button-addon2">
+              <i class="bi bi-mic input-group-text transparent"></i>
+              <div class="input-group-append">
+                <button type="submit" title="submit" class="btn btn-primary btn-transparent rounded-corners"
+                  onclick="sendMessage()" id="button-addon2">
+                  <i class="bi bi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
 
-    <!-- Include Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Include Font Awesome JS for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </main>
 
-    <script>
-        // JavaScript function to send user messages
-    
-         // JavaScript function to toggle the left-side menu on mobile
-         function toggleMenu() {
-            const menuItems = document.getElementById("menu-items");
-            menuItems.classList.toggle("menu-visible");
-        }
-        function sendMessage() {
-    const userInput = document.getElementById("user-input-field").value;
-    const newMessagesContainer = document.getElementById("new-messages");
+  <!-- End #main -->
 
-    // Create a new chat message element
-    const userMessage = document.createElement("div");
-    userMessage.classList.add("chat-message", "user-message");
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      May display inaccurate or offensive information <strong><span> &copy;Privacy Notice</span></strong>.
+    </div>
 
-    userMessage.innerHTML = `<div class="row user-chat-box">
-                  <div class="chat-icon">
-                    <img class="rounded-circle user-image chatgpt-icon" src="images/user-icon.png" />
-                  </div>
-                  <div class="chat-txt">${userInput}</div>
-                </div>`;
-    
-    // Append the message element to the new-messages container
-    newMessagesContainer.appendChild(userMessage);
+  </footer><!-- End Footer -->
 
-    // Clear the user input field
-    document.getElementById("user-input-field").value = "";
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <!-- Include Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
 
-    // Simulate a bot response with a delay (you can replace this with your actual logic)
-    setTimeout(function () {
-        showLoadingMessage();
-        // Create a bot message element
-        const botMessage = document.createElement("div");
-        botMessage.classList.add("chat-message", "bot-message", "animate__fadeIn"); // Add CSS classes for animations
-        botMessage.innerHTML = ` <div class="row gpt-chat-box">
-                  <div >
-                    <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="images/chatgpt-icon.png" />
-                  </div>
-                  <div class="chat-txt">
-                   <p> I am ChatGPT, a large language model developed by OpenAI. I am
-                    an artificial intelligence designed to process and generate
-                    human-like text based on the input provided to me. I am here to
-                    assist you with any questions or tasks you may have to the best
-                    of my abilities!</p>
-                    
-                    Chat GPT can be used in the classroom to help students develop skills like writing, reading comprehension, and vocabulary building. Teachers can use Chat GPT to help students develop these skills.
-                    <br> 
-                    <br> 
-                    <div class="mt-3"><strong>Learn more:</strong>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">1. smallcase.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">2. cnn.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">3. cnn.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">4. marketbeat.com</button>
-                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">+2 more</button>
-                    </div>
-                    <br>
-                    <div class="mt-3">
-                        <!-- Button with a thumbs-up icon -->
-            <button class="btn btn-sm btn-outline-primary mr-2">
-                <i class="fas fa-thumbs-up text-blue"></i>
-            </button>
-            
-            <!-- Button with a thumbs-down icon -->
-            <button class="btn btn-sm btn-outline-danger mr-2">
-                <i class="fas fa-thumbs-down text-blue"></i>
-            </button>
-            
-            <!-- Button with an upload icon -->
-            <button class="btn btn-sm btn-outline-success mr-2">
-                <i class="fas fa-upload text-blue"></i>
-            </button>
-
-            <!-- Button with a Google logo and label 'Google It' -->
-            <a href="https://www.google.com" target="_blank" class="btn btn-sm btn-outline-secondary">
-                <img src="images/google-logo.png" alt="Google Logo" class="google-logo" style="width: 25px; height: 25px;"/>
-                Google It
-            </a>
-                    </div>
-                  </div>
-                </div>`;
-        
-        // Append the bot message element to the new-messages container
-        newMessagesContainer.appendChild(botMessage);
-
-        // Scroll to the bottom of the chat-content-area with smooth animation
-        document.getElementById("chat-content-area").scrollTo({
-            top: newMessagesContainer.scrollHeight,
-            behavior: "smooth"
-        });
-        hideLoadingMessage(); }, 1000); // Delay for simulating the bot response
-}
-// Function to show the loading message
-function showLoadingMessage() {
-    const loadingMessage = document.querySelector(".loading-message");
-    loadingMessage.style.display = "block";
-}
-
-// Function to hide the loading message
-function hideLoadingMessage() {
-    const loadingMessage = document.querySelector(".loading-message");
-    loadingMessage.style.display = "none";
-}
-    </script>
+  </script>
 </body>
+
 </html>
